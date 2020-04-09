@@ -44,6 +44,7 @@ func NewAmazonECSVolumePlugin() *AmazonECSVolumePlugin {
 	plugin := &AmazonECSVolumePlugin{
 		volumeDrivers: map[string]VolumeDriver{
 			"efs": NewECSVolumeDriver(),
+			"lustre": NewECSVolumeDriver(),
 		},
 		volumes: make(map[string]*Volume),
 		state:   NewStateManager(),
